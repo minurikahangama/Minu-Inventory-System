@@ -1,0 +1,51 @@
+{% extends 'partials/base.html' %}
+{% block title %} Staff Detail Page{% endblock %}
+
+{% block content %}
+{% include 'partials/topnav.html' %}
+
+<!-- Staff Detail -->
+<div class="container">
+    <div class="row justify-content-end my-4">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-info text-white">
+                    Profile Detail Page
+                </div>
+                <div class="row p-3">
+                    <div class="col-md-8">
+                        <table class="table table-borderless">
+                            <thead>
+                                <span class="h4">Profile Information</span>
+                                <hr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Name</th>
+                                    <td>{{ worker.username }}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Email</th>
+                                    <td>{{ worker.email }}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Phone</th>
+                                    <td>{{ worker.profile.phone }}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Address</th>
+                                    <td>{{ worker.profile.address }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-4">
+                        <img class="img-thumbnail" src="{{ worker.profile.image.url }}" alt="profile-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
